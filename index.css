@@ -1,0 +1,15 @@
+.title{
+    font-family: sans serif;
+    color: 0C0A47;
+    text-align: center;
+}
+.tabContainer{
+    width: 100%;
+    height: 350px;
+}
+.tabContainer .buttonContainer{
+    height: 15%;
+}
+.tabContainer .buttonContainer button{
+    width: 50%;
+}
