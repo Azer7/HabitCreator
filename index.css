@@ -23,11 +23,9 @@
     font-size: 18px;
     background-color: rgb(111, 180, 38);
 }
-.active{
-    font-size: 24px;
-}
 .tabContainer .buttonContainer button:hover{
     background-color: cadetblue;
+    font-size: 30px;
 }
 .tabContainer .tabPanel{
     height: 85%;

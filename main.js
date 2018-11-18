@@ -40,15 +40,7 @@ tabButtons[panelIndex].style.color="white";
 tabPanels.forEach(function(node){
     node.style.display="none";
 });
-// tabPanels[panelIndex].style.display="block";
-// tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
-$(".buttonClass").hover(function(){
-    $(this).addClass('active');
-},function(){
-    $(this).removeClass('active');
-});
-
 //code to store days data locally
 var Day = {
     didntLookAtScreen: false,
