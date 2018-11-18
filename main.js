@@ -2,6 +2,7 @@ var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button"
 var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 var points = 0;
 var tempPoints = 0;
+var add = 0;
 
 function showPanel(panelIndex, colorCode) {
     var fileToLoad = "";
@@ -45,11 +46,9 @@ tabPanels.forEach(function(node){
 //code to store days data locally
 var Day = {
     didntLookAtScreen: false,
-    submittedScreen: false,
     drunk: false,
-    submittedDrunk: false,
     sleepTime: 0,
-    submittedSleepTime: false
+    submitted: false
 }
 
 var days = [];
@@ -69,10 +68,12 @@ localStorage.days = JSON.stringify(days);
 }
 
 function updatePoints() {
+    points = 0;
     for(let day of days) {
         points += day.didntLookAtScreen * 25;
         points += day.drunk * 25;
         if (points >= 100)  //give reward
+        add += 1;
         tempPoints = (day.didntLookAtScreen * 25 + day.drunk * 25);
         points += tempPoints;
     }
