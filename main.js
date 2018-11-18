@@ -62,6 +62,7 @@ days = JSON.parse(localStorage.days);
 
 function resetData() {
 localStorage.removeItem("days");
+days = [];
 for(var i = 0; i < 31; i++) {
     days.push(Object.assign({}, Day));
 }
@@ -73,7 +74,7 @@ function updatePoints() {
         points += day.didntLookAtScreen * 50;
         points += day.drunk * 50;
     }
-    $("#myBar").width(points);
+    $("#myBar").width(String(points) + "%");
 }
 
 showPanel(0,'#f44336');
