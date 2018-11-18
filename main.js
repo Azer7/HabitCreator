@@ -40,8 +40,8 @@ tabButtons[panelIndex].style.color="white";
 tabPanels.forEach(function(node){
     node.style.display="none";
 });
-tabPanels[panelIndex].style.display="block";
-tabPanels[panelIndex].style.backgroundColor=colorCode;
+// tabPanels[panelIndex].style.display="block";
+// tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
 
 
@@ -62,6 +62,7 @@ days = JSON.parse(localStorage.days);
 
 function resetData() {
 localStorage.removeItem("days");
+days = [];
 for(var i = 0; i < 31; i++) {
     days.push(Object.assign({}, Day));
 }
@@ -73,6 +74,7 @@ function updatePoints() {
         points += day.didntLookAtScreen * 50;
         points += day.drunk * 50;
     }
+    $("#myBar").width(String(points) + "%");
 }
 
 showPanel(0,'#f44336');
