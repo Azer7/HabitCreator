@@ -87,7 +87,7 @@ function updatePoints() {
         points += tempPoints;
     }
     $("#myBar").width(String(points) + "%");
-    
+    $("#myBar").html(String(points) + "%");
     
 }
 
