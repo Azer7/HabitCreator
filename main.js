@@ -3,7 +3,7 @@ var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 var points = 0;
 var tempPoints = 0;
 var add = 0;
-const level = 14;
+var level = 0;
 
 function showPanel(panelIndex, colorCode) {
     var fileToLoad = "";
@@ -90,7 +90,7 @@ function updatePoints() {
         points += 30-constrain(Math.abs(9-day.sleepTime), 0, 6)*5;
         }
     
-        //var level = Math.floor(points / 100);
+        level = Math.floor(points / 100);
         points = points % 100;
       
     $("#level").html("Level: " + level);  
