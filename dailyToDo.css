@@ -14,8 +14,8 @@
 }
 
 input[type=checkbox]{
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     vertical-align: middle;
 
 }
@@ -23,18 +23,17 @@ input[type=number]{
     width: 100px;
     height: 28px;
     vertical-align: middle;
-
 }
 .checkboxtext{
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
     font-size:30px;
-    display: inline;
     border: 1px solid green;
     padding: 25px;
+    margin-bottom: 50px;
 }
 
 .button{
-    float: middle;
-    zoom: 2.0;
-    
-    
+    float: left;
+    zoom: 2.0; 
 }

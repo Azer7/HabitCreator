@@ -2,7 +2,6 @@ var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button"
 var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 var points = 0;
 var tempPoints = 0;
-var add = 0;
 var level = 0;
 
 function showPanel(panelIndex, colorCode) {
@@ -67,14 +66,17 @@ resetData();
 days = JSON.parse(localStorage.days);
 }
 
-function resetData() {
+function resetData(bigReset) {
 localStorage.removeItem("days");
 days = [];
 for(var i = 0; i < 31; i++) {
     days.push(Object.assign({}, Day));
-    days[i].sleepTime = Math.floor(Math.random() * 8) + 3;
-    days[i].didntLookAtScreen = Math.random() > 0.3 ? true : false;
-    days[i].drunk = Math.random() > 0.2 ? true : false;
+    
+    if(bigReset) {
+        days[i].sleepTime = Math.floor(Math.random() * 8) + 3;
+        days[i].didntLookAtScreen = Math.random() > 0.3 ? true : false;
+        days[i].drunk = Math.random() > 0.2 ? true : false;
+    }
 }
 localStorage.days = JSON.stringify(days);
 
@@ -83,10 +85,16 @@ localStorage.days = JSON.stringify(days);
 function updatePoints() {
     points = 0;
     for(let day of days) {
-        points += day.didntLookAtScreen * 25;
-        points += day.drunk * 25;
+        points += day.didntLookAtScreen * 10;
+        points += day.drunk * 10;
         points += day.sleepTime * 3;
-        }
+    }
+
+    level = Math.floor(points / 100);
+    points = points % 100;
+
+    $("#level").html("Level:" + level);
+
     $("#myBar").width(String(points) + "%");
     $("#myBar").html(String(points) + "%");
 }
