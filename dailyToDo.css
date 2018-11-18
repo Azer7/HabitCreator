@@ -14,10 +14,9 @@
 }
 
 input[type=checkbox]{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     vertical-align: middle;
-
 }
 input[type=number]{
     width: 100px;
@@ -35,5 +34,9 @@ input[type=number]{
 
 .button{
     float: left;
-    zoom: 2.0; 
+    zoom: 2.0;
+    width: 84px;
+    height: 45px;
+    font-size:12px;
+    font-weight:70;
 }
