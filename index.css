@@ -43,7 +43,7 @@
     
 }
 #myBar {
-    width: 1%;
+    width: points;
     height: 30px;
     background-color: green;
     
