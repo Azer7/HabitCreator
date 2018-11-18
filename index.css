@@ -53,3 +53,9 @@
     color: white; 
     max-width: 100%;
 }
+#level {
+    color: green;
+    background-color: white;
+    padding-left: 10px;
+    
+}

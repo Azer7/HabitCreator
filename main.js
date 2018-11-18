@@ -3,6 +3,7 @@ var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 var points = 0;
 var tempPoints = 0;
 var add = 0;
+var level = 0;
 
 function showPanel(panelIndex, colorCode) {
     var fileToLoad = "";
@@ -76,6 +77,7 @@ for(var i = 0; i < 31; i++) {
     days[i].drunk = Math.random() > 0.2 ? true : false;
 }
 localStorage.days = JSON.stringify(days);
+
 }
 
 function updatePoints() {
@@ -85,14 +87,8 @@ function updatePoints() {
         points += day.drunk * 25;
         points += day.sleepTime * 3;
         }
-        if(points >= 100) {
-        points = 0;
-        add += 1;
-    }
-    else {
     $("#myBar").width(String(points) + "%");
     $("#myBar").html(String(points) + "%");
-}
 }
 
 showPanel(0,'#ffffff');
