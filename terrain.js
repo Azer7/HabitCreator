@@ -142,7 +142,14 @@ function draw() {
   }
   pop();
   //these have y value baselines
-  flower(-800,420,-550);
-  trees(-200,290,-450); 
-  clouds();
+  if (add == 1) {
+    flower(-800,420,-550);
+  }
+  if (add == 2) {
+    trees(-200,290,-450);
+  }
+   if (add == 3) {
+     clouds();
+   }
+  
 }
