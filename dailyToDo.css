@@ -1,6 +1,14 @@
 #todo-mainheader{
+    font-family: 'Abel';
     font-size: 50px;
+    text-align: center;
+    color: green;
 }
+#line{
+    text-align: center;
+    color: green;
+}
+
 input[type=checkbox]{
     width: 28px;
     height: 28px;

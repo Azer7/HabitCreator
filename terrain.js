@@ -49,7 +49,7 @@ function setup() {
 
  //for clouds
  for(var i = 0; i < 4; i++){
-  cloudY.push(random(0,100));
+  cloudY.push(random(0,50));
   cloudZ.push(random(-200,0));
   cloudX.push(0);
 }
@@ -108,11 +108,11 @@ function trees(x,y,z){
   pop();
 }
 
-function flower(x,y,z){
+function flower(x,y){
   ambientMaterial(0,255,0);
   push();
   noStroke();
-  translate(x,y,z);
+  translate(x,y,-550);
   cylinder(4,60,2,2);
   push();
   ambientMaterial(255,105,180);
@@ -161,7 +161,7 @@ function draw() {
      clouds();
    }*/
 
-   flower(-800,420,-550);
+   flower(-800,420);
    trees(-200,290,-450);
    bush(-600,420,-550);
    clouds(); //must be last ... idk why
