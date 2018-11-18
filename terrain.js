@@ -151,7 +151,7 @@ function draw() {
   }
   pop();
   //these have y value baselines
-  /*if (add == 1) {
+  if (add == 1) {
     flower(-800,420,-550);
   }
   if (add == 2) {
@@ -159,11 +159,11 @@ function draw() {
   }
    if (add == 3) {
      clouds();
-   }*/
+   }
 
-   flower(-800,420);
-   trees(-200,290,-450);
-   bush(-600,420,-550);
-   clouds(); //must be last ... idk why
+  //  flower(-800,420);
+  //  trees(-200,290,-450);
+  //  bush(-600,420,-550);
+  //  clouds(); //must be last ... idk why
 
 }
