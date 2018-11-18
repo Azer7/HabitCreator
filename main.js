@@ -40,8 +40,8 @@ tabButtons[panelIndex].style.color="white";
 tabPanels.forEach(function(node){
     node.style.display="none";
 });
-tabPanels[panelIndex].style.display="block";
-tabPanels[panelIndex].style.backgroundColor=colorCode;
+// tabPanels[panelIndex].style.display="block";
+// tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
 
 
@@ -73,6 +73,7 @@ function updatePoints() {
         points += day.didntLookAtScreen * 50;
         points += day.drunk * 50;
     }
+    $("#myBar").width(points);
 }
 
 showPanel(0,'#f44336');
