@@ -1,7 +1,10 @@
 #todo-mainheader{
     font-size: 50px;
 }
-
+input[type=checkbox]{
+    width: 25px;
+    height: 25px;
+}
 .checkboxtext{
     font-size:30px;
     display: inline;

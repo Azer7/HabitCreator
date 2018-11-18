@@ -22,22 +22,11 @@ function initDailyToDo(){
     var myInput = $("#hoursSlept")
     var d = new Date()
     var currentDay = d.getDate();
-    if (days[currentDay].submittedScreen){
-        myCheck.prop('disabled', true);      
-    } else {
-        myCheck.prop('disabled', false);        
-    }
-
+    
     if(days[currentDay].didntLookAtScreen) {
         myCheck.prop("checked", true)  
     } else {
         myCheck.prop("checked", false)  
-    }
-
-    if(days[currentDay].submittedDrunk) {
-        myCheck2.prop('disabled', true);        
-    } else {
-        myCheck2.prop('disabled', false);        
     }
     
     if(days[currentDay].drunk) {
@@ -45,15 +34,19 @@ function initDailyToDo(){
     } else {
         myCheck2.prop("checked", false);
     }
-
-    if(days[currentDay].submittedSleepTime){
+    
+    if(days[currentDay].submitted){
+        myCheck.prop('disabled', true);      
+        myCheck2.prop('disabled', true);        
         myInput.prop('disabled', true);
     } else {
+        myCheck.prop('disabled', false);        
+        myCheck2.prop('disabled', false);        
         myInput.prop('disabled', false);
     }
     
-    if(days[currentDay].timeSlept) {
-        myInput.val(days[currentDay].timeSlept);
+    if(days[currentDay].sleepTime) {
+        myInput.val(days[currentDay].sleepTime);
     } 
 }
 
