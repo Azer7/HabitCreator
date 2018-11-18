@@ -10,4 +10,6 @@ tabButtons[panelIndex].style.Color="white";
 tabPanels.forEach(function(node){
     node.style.display="none";
 });
+tabPanels[panelIndex].style.display="block";
+tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
