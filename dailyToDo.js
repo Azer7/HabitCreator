@@ -53,7 +53,7 @@ function initDailyToDo(){
     }
     
     if(days[currentDay].timeSlept) {
-        myCheck2.val(days[currentDay].timeSlept);
+        myInput.val(days[currentDay].timeSlept);
     } 
 }
 
