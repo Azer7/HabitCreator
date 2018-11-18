@@ -65,7 +65,7 @@ function setup() {
 
 function clouds(){
 	stroke(240);
-	fill(255);
+	specularMaterial(255);
 	push();
 	translate(-1,0);
 	for(var t = 0; t <= it; t ++){
