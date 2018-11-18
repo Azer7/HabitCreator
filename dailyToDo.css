@@ -1,9 +1,9 @@
-#todo-mainheader{
+.sub-mainheader{
     font-family: 'Abel';
     font-size: 50px;
     text-align: center;
     color: green;
-    margin-bottom: 50;
+    margin-bottom: 0px;
 }
 #line{
     font-size: 24px;
