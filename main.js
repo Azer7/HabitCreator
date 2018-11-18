@@ -2,7 +2,6 @@ var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button"
 var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 var points = 0;
 var tempPoints = 0;
-var add = 0;
 var level = 0;
 
 function showPanel(panelIndex, colorCode) {
