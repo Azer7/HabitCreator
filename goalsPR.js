@@ -1,7 +1,33 @@
+var graph = 0;
+function PR_leftButtonClicked() {
+  if(graph == 0) {
+    $("#sleepPlot").show();
+    $("#habitPlot").hide();
+    graph = 1;
+  } else {
+    $("#sleepPlot").hide();
+    $("#habitPlot").show();
+    graph = 0
+  }
+}
+
+function PR_rightButtonClicked() {
+  if(graph == 0) {
+    $("#sleepPlot").show();
+    $("#habitPlot").hide();
+    graph = 1;
+  } else {
+    $("#sleepPlot").hide();
+    $("#habitPlot").show();
+    graph = 0
+  }
+}
 
 function initGoalsPR() {
   plotSleep();
   plotRadar();
+  $("#sleepPlot").hide();
+  $("#habitPlot").show();
 }
 
 function plotSleep() {

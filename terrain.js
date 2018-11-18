@@ -19,7 +19,7 @@ function preload() {
 }
 
 function setup() {
- var canvas = createCanvas(1200,700,WEBGL); 
+ var canvas = createCanvas(innerWidth * 0.9,innerHeight * 0.9,WEBGL); 
  canvas.parent("animation-div");
  //for terrain
  rows = h/scl;
@@ -151,16 +151,16 @@ function draw() {
   }
   pop();
   //these have y value baselines
-  if (add == 1) {
+  if (level >= 1) {
     flower(-800,420,-550);
   }
-  if (add == 2) {
+  if (level >= 3) {
     trees(-200,290,-450);
   }
-  if (add == 3) {
+  if (level >= 4) {
     bush(-600, 420, -550);
   }
-  if (add == 4) {
+  if (level >= 6) {
      clouds();
   }
 

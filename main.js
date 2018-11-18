@@ -35,7 +35,6 @@ function showPanel(panelIndex, colorCode) {
             break;
             case 2:
             loop();
-            $("#tabPanel").hide();
             $("#animation-div").show(); 
             break;
         }
