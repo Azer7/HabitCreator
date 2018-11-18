@@ -1,6 +1,23 @@
 var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
 var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 function showPanel(panelIndex, colorCode) {
+    var fileToLoad = "";
+    switch(panelIndex) {
+        case 0:
+        fileToLoad = "goalsPR.html";
+        break;
+        case 1:
+        fileToLoad = "dailyToDo.html";
+        break;
+        case 2:
+        fileToLoad = "rewards.html";
+        break; 
+    }
+
+    $.get(fileToLoad, function(data) {
+        $("#tabPanel").html(data);
+    });
+
     tabButtons.forEach(function(node){
         node.style.backgroundColor="";
         node.style.color="";
