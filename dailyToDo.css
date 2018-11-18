@@ -16,23 +16,27 @@
 input[type=checkbox]{
     width: 80px;
     height: 80px;
-    margin-top: 10px;
+    vertical-align: middle;
 
 }
 input[type=number]{
     width: 100px;
     height: 28px;
+    vertical-align: middle;
 }
 .checkboxtext{
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
     font-size:30px;
-    display: inline;
     border: 1px solid green;
-    padding: 25px
+    padding: 25px;
+    margin-bottom: 50px;
 }
 
 .button{
     float: left;
     zoom: 2.0;
+
     
     
 }
