@@ -137,6 +137,7 @@ function flower(x,y,z){
 function draw() {
   background(178, 232, 255);
   noStroke();
+  ambientLight(100);
 
   var dirY = (mouseY / height - 0.5) * 4;
 	var dirX = (mouseX / width - 0.5) * 4;
