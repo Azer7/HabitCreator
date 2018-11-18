@@ -16,6 +16,17 @@ function showPanel(panelIndex, colorCode) {
 
     $.get(fileToLoad, function(data) {
         $("#tabPanel").html(data);
+        switch(panelIndex) {
+            case 0:
+            initGoalsPR();
+            break;
+            case 1:
+            initDailyToDo();
+            break;
+            case 2:
+            initRewards();
+            break;
+        }
     });
 
     tabButtons.forEach(function(node){
@@ -30,3 +41,4 @@ tabPanels.forEach(function(node){
 tabPanels[panelIndex].style.display="block";
 tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
+showPanel(0,'#f44336');
