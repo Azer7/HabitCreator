@@ -24,7 +24,7 @@ function preload() {
 }
 
 function setup() {
- var canvas = createCanvas(innerWidth * 0.9,innerHeight * 0.9,WEBGL); 
+ var canvas = createCanvas(innerWidth*0.95,innerHeight * 0.9,WEBGL); 
  canvas.parent("animation-div");
  //for terrain
  rows = h/scl;
