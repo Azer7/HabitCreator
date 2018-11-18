@@ -1,5 +1,10 @@
 
 function initGoalsPR() {
+  plotSleep();
+  plotRadar();
+}
+
+function plotSleep() {
   var currentDay = new Date().getDate();
   var dayOfTheWeek = new Date().getDay();
   var sundayDay = currentDay - dayOfTheWeek;
@@ -26,6 +31,44 @@ function initGoalsPR() {
             }
         }
   });
+}
+
+function plotRadar() {
+  var ctx = $("#habitPlot");
+  var sleptCount= 0, screenOffCount = 0, drankTeaCount = 0;
+  for(var day of days) {
+    if(day.sleepTime > 7 && day.sleepTime < 11) {
+      sleptCount++;
+    }
+    if(day.didntLookAtScreen) {
+      screenOffCount++;
+    }
+    if(day.drunk) {
+      drankTeaCount++;
+    }
+  }
+
+  var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {"labels": ["Slept well", "Screen off before bed", "Drank tea"], 
+          "datasets":[{"data":[sleptCount, screenOffCount, drankTeaCount], "backgroundColor": "rgba(100,50,200,0.6)", "hoverBackgroundColor":"rgba(100,100,100,0.5)" }]}, 
+          options: {
+            legend: {
+              display: false
+            }
+            // },
+            // scales: {
+            //     yAxes: [{
+            //         ticks: {
+            //             beginAtZero: true,
+            //             suggestedMin: 0,
+            //             suggestedMax: 16
+            //         }
+            //     }]
+            // }
+        }
+  });
+  ctx.prop("hidden", true);
 }
 
 function getWeekSleepTime(sundayDay) {
