@@ -67,14 +67,16 @@ resetData();
 days = JSON.parse(localStorage.days);
 }
 
-function resetData() {
+function resetData(abool) {
 localStorage.removeItem("days");
 days = [];
 for(var i = 0; i < 31; i++) {
     days.push(Object.assign({}, Day));
+    if(abool) {
     days[i].sleepTime = Math.floor(Math.random() * 8) + 3;
     days[i].didntLookAtScreen = Math.random() > 0.3 ? true : false;
     days[i].drunk = Math.random() > 0.2 ? true : false;
+    }
 }
 localStorage.days = JSON.stringify(days);
 
@@ -85,8 +87,13 @@ function updatePoints() {
     for(let day of days) {
         points += day.didntLookAtScreen * 25;
         points += day.drunk * 25;
-        points += 30-constrain(9-day.sleepTime, 0, 6)*5;
+        points += 30-constrain(Math.abs(9-day.sleepTime), 0, 6)*5;
         }
+    
+        var level = Math.floor(points / 100);
+        points = points % 100;
+      
+    $("#level").html("Level: " + level);  
     $("#myBar").width(String(points) + "%");
     $("#myBar").html(String(points) + "%");
 }
