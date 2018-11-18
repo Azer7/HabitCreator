@@ -1,24 +1,20 @@
-// var data;
-// $.get(data.json, function(e) {
-// data = e;
-// });
-var days = [];
+//resetData();
+var input = $("#hoursSlept")
 
-class notDay {
-    constructor() {
-        this.didntLookAtScreen = false;        
-        this.submittedSleep = false;
-        this.drunk = false;
-        this.submittedDrunk = false;
-    }
-}
+input.change(function() {
+    var num = parseInt(this.value, 10),
+        min = 0,
+        max = 24;
 
-function resetData() {
-    for(var i = 0; i < 31; i++) {
-        days.push(new notDay());
+    if (isNaN(num)) {
+        this.value = "";
+        return;
     }
-}
-resetData();
+
+    this.value = Math.max(num, min);
+    this.value = Math.min(num, max);
+});
+
 
 function initDailyToDo(){
     var myCheck = $("#mycheck");
@@ -58,8 +54,10 @@ function submitDaily() {
     var currentDay = d.getDate();
     days[currentDay].didntLookAtScreen = myCheck.is(":checked");
     days[currentDay].drunk = myCheck2.is(":checked");
-    days[currentDay].submittedSleep =true;
+    days[currentDay].submittedSleep = true;
     days[currentDay].submittedDrunk = true;
+    localStorage.days = JSON.stringify(days);
+    updatePoints();
     initDailyToDo();
 }
 
