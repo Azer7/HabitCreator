@@ -19,8 +19,8 @@ function preload() {
 }
 
 function setup() {
- createCanvas(1200,700,WEBGL); 
- 
+ var canvas = createCanvas(1200,700,WEBGL); 
+ canvas.parent("animation-div");
  //for terrain
  rows = h/scl;
  cols = w/scl;

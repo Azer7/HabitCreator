@@ -23,12 +23,20 @@ function showPanel(panelIndex, colorCode) {
         switch(panelIndex) {
             case 0:
             initGoalsPR();
+            noLoop();
+            $("#tabPanel").show();
+            $("#animation-div").hide();
             break;
             case 1:
             initDailyToDo();
+            noLoop();
+            $("#tabPanel").show();
+            $("#animation-div").hide(); 
             break;
             case 2:
-            initRewards();
+            loop();
+            $("#tabPanel").hide();
+            $("#animation-div").show(); 
             break;
         }
     });
