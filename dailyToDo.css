@@ -33,6 +33,6 @@ input[type=number]{
 }
 
 .button{
-    float: left;
+    /* float: left; */
     zoom: 2.0;
 }
