@@ -27,6 +27,7 @@ input[type=number]{
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     font-size:30px;
+    font-family: "Abel";
     border: 1px solid green;
     padding: 15px;
     margin-bottom: 15px;
@@ -35,4 +36,5 @@ input[type=number]{
 .button{
     /* float: left; */
     zoom: 2.0;
+    font-family: "Abel";
 }
