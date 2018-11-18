@@ -58,7 +58,7 @@ function submitDaily() {
     var currentDay = d.getDate();
     days[currentDay].didntLookAtScreen = myCheck.is(":checked");
     days[currentDay].drunk = myCheck2.is(":checked");
-    days[currentDay].sleepTime = myInput.val() ? myInput.val() : 0;
+    days[currentDay].sleepTime = parseInt(myInput.val()) ? parseInt(myInput.val()) : 0;
     days[currentDay].submitted = true;
 
     
