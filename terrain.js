@@ -14,8 +14,9 @@ var it = 0;
 
 //for trees
 function preload() {
-  tree = loadModel('assets/simpleTree.obj', true);
-  img = loadImage('assets/Grass.jpg');
+  var rando = int(random(1,7));
+  tree = loadModel('assets/Tree' + rando + '.obj', true);
+  img = loadImage('assets/green.jpg');
 }
 
 function setup() {
@@ -49,7 +50,7 @@ function setup() {
 
  //for clouds
  for(var i = 0; i < 4; i++){
-  cloudY.push(random(0,300));
+  cloudY.push(random(0,100));
   cloudZ.push(random(-200,0));
   cloudX.push(0);
 }
@@ -59,7 +60,7 @@ function clouds(){
 	stroke(240);
 	fill(255);
 	push();
-	translate(-1500,0);
+	translate(-3000,0);
 	for(var t = 0; t <= it; t ++){
 		translate(cloudX[it],cloudY[it],cloudZ[it]);
 		cloudX[it] ++;
@@ -78,7 +79,6 @@ function clouds(){
 		translate(14,29,11);
 		ellipsoid(30,30,30,4,4);
 		pop();
-		pop();
 	}
 	var newcloud = int(random(200));
 		if (newcloud == 5){
@@ -87,6 +87,15 @@ function clouds(){
 	if(it > 4){
 		it = 0;
 	}
+}
+
+function bush(x,y,z){
+  push();
+  translate(x,y,z)
+  fill(0,100,0);
+  noStroke();
+  ellipsoid(60,50,60,4,4)
+  pop();
 }
 
 function trees(x,y,z){
@@ -124,11 +133,12 @@ function draw() {
   rotateX(PI/2);
   translate(-w/2-250,-h/2-150,-100);
 
+
   for (var y = 0; y < rows-1; y++){
     for (var x = 0; x< cols-1; x++){
       beginShape(TRIANGLES);
       fill(0,geocolours[y][x],0);
-      vertex(x*scl, y*scl, terrain[y][x]);
+      vertex(x*scl , y*scl, terrain[y][x]);
       vertex(x*scl, (y+1)*scl, terrain[y+1][x]);
       vertex((x+1)*scl, (y+1)*scl, terrain[y+1][x+1]);
       endShape();
@@ -144,5 +154,6 @@ function draw() {
   //these have y value baselines
   flower(-800,420,-550);
   trees(-200,290,-450); 
+  bush(-600,420,-550);
   clouds();
 }
