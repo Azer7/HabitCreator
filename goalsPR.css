@@ -6,6 +6,11 @@
     margin-left: 46.5%;
 }
 
+.goalDescription {
+    font: 'Abel';
+    font-size: 30px;
+}
+
 .navig {
     text-decoration: none;
     display: inline-block;
