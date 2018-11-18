@@ -44,10 +44,6 @@
     background-color: grey;
     
 }
-/* #myBar {
-    height: 30px;
-    background-color: green;
-} */
 #myBar {
     width: 10%;
     height: 30px;
@@ -55,4 +51,5 @@
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     color: white; 
+    max-width: 100%;
 }

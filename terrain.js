@@ -157,9 +157,12 @@ function draw() {
   if (add == 2) {
     trees(-200,290,-450);
   }
-   if (add == 3) {
+  if (add == 3) {
+    bush(-600, 420, -550);
+  }
+  if (add == 4) {
      clouds();
-   }
+  }
 
   //  flower(-800,420);
   //  trees(-200,290,-450);

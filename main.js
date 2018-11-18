@@ -84,14 +84,15 @@ function updatePoints() {
         points += day.didntLookAtScreen * 25;
         points += day.drunk * 25;
         points += day.sleepTime * 3;
-        if (points >= 100)  //give reward
+        }
+        if(points >= 100) {
+        points = 0;
         add += 1;
-        tempPoints = (day.didntLookAtScreen * 25 + day.drunk * 25);
-        points += tempPoints;
     }
+    else {
     $("#myBar").width(String(points) + "%");
     $("#myBar").html(String(points) + "%");
-    
+}
 }
 
 showPanel(0,'#ffffff');
