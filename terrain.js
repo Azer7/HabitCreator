@@ -151,16 +151,16 @@ function draw() {
   }
   pop();
   //these have y value baselines
-  if (add == 1) {
+  if (level == 1) {
     flower(-800,420,-550);
   }
-  if (add == 2) {
+  if (level == 2) {
     trees(-200,290,-450);
   }
-  if (add == 3) {
+  if (level == 3) {
     bush(-600, 420, -550);
   }
-  if (add == 4) {
+  if (level == 4) {
      clouds();
   }
 
