@@ -47,7 +47,7 @@ var Day = {
     submittedScreen: false,
     drunk: false,
     submittedDrunk: false,
-    sleepTime: false,
+    sleepTime: 0,
     submittedSleepTime: false
 }
 
