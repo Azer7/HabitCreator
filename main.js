@@ -85,10 +85,16 @@ localStorage.days = JSON.stringify(days);
 function updatePoints() {
     points = 0;
     for(let day of days) {
-        points += day.didntLookAtScreen * 25;
-        points += day.drunk * 25;
+        points += day.didntLookAtScreen * 10;
+        points += day.drunk * 10;
         points += day.sleepTime * 3;
-        }
+    }
+
+    level = Math.floor(points / 100);
+    points = points % 100;
+
+    $("#level").html("Level:" + level);
+
     $("#myBar").width(String(points) + "%");
     $("#myBar").html(String(points) + "%");
 }
