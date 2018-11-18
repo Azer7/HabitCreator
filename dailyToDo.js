@@ -1,24 +1,30 @@
+var Day = {
+        didntLookAtScreen: false,
+        submittedSleep: false,
+        drunk: false,
+        submittedDrunk: false
+}
 // var data;
 // $.get(data.json, function(e) {
 // data = e;
 // });
 var days = [];
-
-class notDay {
-    constructor() {
-        this.didntLookAtScreen = false;        
-        this.submittedSleep = false;
-        this.drunk = false;
-        this.submittedDrunk = false;
-    }
+if(localStorage.days == undefined) {
+    resetData();
+} else {
+    days = JSON.parse(localStorage.days);
 }
+
 
 function resetData() {
+    localStorage.removeItem("days");
     for(var i = 0; i < 31; i++) {
-        days.push(new notDay());
+        days.push(Object.assign({}, Day));
     }
+    localStorage.days = JSON.stringify(days);
 }
-resetData();
+
+//resetData();
 
 function initDailyToDo(){
     var myCheck = $("#mycheck");
@@ -58,8 +64,9 @@ function submitDaily() {
     var currentDay = d.getDate();
     days[currentDay].didntLookAtScreen = myCheck.is(":checked");
     days[currentDay].drunk = myCheck2.is(":checked");
-    days[currentDay].submittedSleep =true;
+    days[currentDay].submittedSleep = true;
     days[currentDay].submittedDrunk = true;
+    localStorage.days = JSON.stringify(days);
     initDailyToDo();
 }
 
