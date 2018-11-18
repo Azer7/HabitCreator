@@ -1,11 +1,26 @@
-function initGoalsPR() {
-    var data = [
-        {
-          x: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          y: [20, 14, 23],
-          type: 'bar'
-        }
-      ];
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
 
-    Plotly.newPlot('sleepPlot', data);
+function initGoalsPR() {
+  var currentDay = new Date().getDate();
+  var dayOfTheWeek = new Date().getDay();
+  var sundayDay = currentDay - dayOfTheWeek;
+  var myBarChart = new Chart($("#sleepPlot"), {
+    type: 'bar',
+    data: getWeekSleepTime(sundayDay),
+    options: {}
+});
+}
+
+function getWeekSleepTime(sundayDay) {
+  var sleepTimes = [];
+  var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  for(var i = 0; i < 7; i++) {
+    sleepTimes.push(new Point(dayNames[i], days[sundayDay + i].sleepTime));
+  }
+  return sleepTimes;
 }
