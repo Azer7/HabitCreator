@@ -43,7 +43,11 @@ tabPanels.forEach(function(node){
 // tabPanels[panelIndex].style.display="block";
 // tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
-
+$(".buttonClass").hover(function(){
+    $(this).addClass('active');
+},function(){
+    $(this).removeClass('active');
+});
 
 //code to store days data locally
 var Day = {
