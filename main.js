@@ -36,7 +36,7 @@ function showPanel(panelIndex, colorCode) {
         node.style.color="";
 });
 tabButtons[panelIndex].style.backgroundColor=colorCode;
-tabButtons[panelIndex].style.color="white";
+tabButtons[panelIndex].style.color="green";
 tabPanels.forEach(function(node){
     node.style.display="none";
 });
@@ -75,5 +75,5 @@ function updatePoints() {
     $("#myBar").width(String(points) + "%");
 }
 
-showPanel(0,'#f44336');
+showPanel(0,'#ffffff');
 updatePoints();

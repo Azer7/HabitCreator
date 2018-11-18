@@ -21,10 +21,10 @@
     padding: 10px;
     font-family: sans serif;
     font-size: 18px;
-    background-color: rgb(111, 180, 38);
+    color: white;
+    background-color: green;
 }
 .tabContainer .buttonContainer button:hover{
-    background-color: cadetblue;
     font-size: 24px;
 }
 .tabContainer .tabPanel{
