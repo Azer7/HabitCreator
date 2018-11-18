@@ -2,6 +2,7 @@ var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button"
 var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
 var points = 0;
 var tempPoints = 0;
+var add = 0;
 
 function showPanel(panelIndex, colorCode) {
     var fileToLoad = "";
@@ -72,6 +73,7 @@ function updatePoints() {
         points += day.didntLookAtScreen * 25;
         points += day.drunk * 25;
         if (points >= 100)  //give reward
+        add += 1;
         tempPoints = (day.didntLookAtScreen * 25 + day.drunk * 25);
         points += tempPoints;
     }
