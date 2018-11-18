@@ -14,7 +14,12 @@ var it = 0;
 
 //for trees
 function preload() {
-  tree = loadModel('assets/Tree1.obj', true);
+  tree1 = loadModel('assets/Tree1.obj', true);
+  tree2 = loadModel('assets/Tree2.obj', true);
+  tree3 = loadModel('assets/Tree3.obj', true);
+  tree4 = loadModel('assets/Tree4.obj', true);
+  tree5 = loadModel('assets/Tree5.obj', true);
+  tree6 = loadModel('assets/Tree6.obj', true);
   img = loadImage('assets/green.jpg');
 }
 
@@ -27,6 +32,8 @@ function setup() {
  
  var xoff = 0;
  var yoff = 0;
+
+
 	
  
  for (var y = 0; y < rows; y++){
@@ -49,36 +56,38 @@ function setup() {
 
  //for clouds
  for(var i = 0; i < 4; i++){
-  cloudY.push(random(0,50));
-  cloudZ.push(random(-200,0));
+  cloudY.push(random(-400,0));
+  cloudZ.push(random(50,100));
   cloudX.push(0);
 }
 }
+
 
 function clouds(){
 	stroke(240);
 	fill(255);
 	push();
-	translate(-3000,0);
+	translate(-1,0);
 	for(var t = 0; t <= it; t ++){
-		translate(cloudX[it],cloudY[it],cloudZ[it]);
-		cloudX[it]++;
-		ellipsoid(30,30,30,4,3);
+		translate(cloudX[t],cloudY[t],cloudZ[t]);
+		cloudX[t]+=2;
+		ellipsoid(50,50,50,4,3);
 		push();
-		translate(20,20,15);
-		ellipsoid(30,30,30,4,4);
-		translate(15,-25,-10);
-		ellipsoid(30,30,30,4,4);
-		translate(3,0,20);
-		ellipsoid(30,30,30,4,4);
-		translate(18,18,13);
-		ellipsoid(30,30,30,4,4);
-		translate(21,-16,-9);
-		ellipsoid(30,30,30,4,4);
-		translate(14,29,11);
-		ellipsoid(30,30,30,4,4);
-		pop();
-	}
+		translate(40,40,15);
+		ellipsoid(60,60,60,4,4);
+		translate(35,-45,-30);
+		ellipsoid(60,60,60,4,4);
+		translate(23,20,40);
+		ellipsoid(60,60,60,4,4);
+		translate(38,38,33);
+		ellipsoid(60,60,60,4,4);
+		translate(41,-26,-19);
+		ellipsoid(60,60,60,4,4);
+		translate(34,49,31);
+		ellipsoid(60,60,60,4,4);
+    pop();
+  }
+  pop();
 	var newcloud = int(random(200));
 		if (newcloud == 5){
 		it++;
@@ -100,14 +109,14 @@ function bush(x,y,z){
   pop();
 }
 
-function trees(x,y,z){
+function trees(x,y,z,whichtree){
   push();
   rotateX(3.14159)
   translate(x,-y,-z);
   scale(1.8);
   normalMaterial(); 
   texture(img);
-  model(tree);
+  model(whichtree);
   pop();
 }
 
@@ -165,16 +174,33 @@ function draw() {
   //these have y value baselines
   if (level >= 1) {
     flower(600,150,250);
+    flower(300,150,350);
+    flower(750,150,290);
+    flower(600,150,300);
+    flower(300,150,250);
+    flower(1400,150,190);
+    flower(1600,150,200);
+    flower(1000,150,280);
   }
   if (level >= 3) {
-    trees(1500,100,300);
+    trees(1600,100,250,tree1);
+    trees(1000,100,350, tree3);
+    trees(400,100,290, tree2);
+    trees(1800,100,160, tree2);
+    trees(600,100,320, tree4);
   }
   if (level >= 4) {
-    bush(1000,150,250);
+    bush(1000,150,300);
+    bush(300,150,340);
+    bush(1200,150,100);
+    bush(600,150,225);
+    bush(800,150,260);
+    bush(1900,150,320);
   }
   if (level >= 6) {
      clouds();
   }
+  
   pop();
 
   //  flower(-800,420);
