@@ -20,7 +20,7 @@ function getWeekSleepTime(sundayDay) {
   var sleepTimes = [];
   var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   for(var i = 0; i < 7; i++) {
-    sleepTimes.push(new Point(dayNames[i], days[sundayDay + i].sleepTimes));
+    sleepTimes.push(new Point(dayNames[i], days[sundayDay + i].sleepTime));
   }
   return sleepTimes;
 }
