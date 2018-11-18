@@ -72,6 +72,7 @@ function updatePoints() {
     for(let day of days) {
         points += day.didntLookAtScreen * 25;
         points += day.drunk * 25;
+        points += day.sleepTime * 3;
         if (points >= 100)  //give reward
         add += 1;
         tempPoints = (day.didntLookAtScreen * 25 + day.drunk * 25);
