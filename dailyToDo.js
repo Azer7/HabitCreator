@@ -17,7 +17,6 @@ input.change(function() {
 
 
 function initDailyToDo(){
-    console.log("I am here");
     var myCheck = $("#mycheck");
     var myCheck2 = $("#mycheck2");
     var myInput = $("#hoursSlept")
@@ -47,7 +46,7 @@ function initDailyToDo(){
         myCheck2.prop("checked", false);
     }
 
-    if(days[currentDay].submittedTimeSlept){
+    if(days[currentDay].submittedSleepTime){
         myInput.prop('disabled', true);
     } else {
         myInput.prop('disabled', false);
