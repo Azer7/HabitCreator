@@ -1,4 +1,20 @@
 //resetData();
+var input = $("#hoursSlept")
+
+input.change(function() {
+    var num = parseInt(this.value, 10),
+        min = 0,
+        max = 24;
+
+    if (isNaN(num)) {
+        this.value = "";
+        return;
+    }
+
+    this.value = Math.max(num, min);
+    this.value = Math.min(num, max);
+});
+
 
 function initDailyToDo(){
     var myCheck = $("#mycheck");
