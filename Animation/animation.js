@@ -1,14 +1,17 @@
 function preload() {
-    octahedron = loadModel('assets/octahedron.obj');
+    tree = loadModel('assets/simpleTree.obj', true);
+    img = loadImage('assets/Grass.jpg');
   }
   
   function setup() {
-    createCanvas(100, 100, WEBGL);
+    createCanvas(innerWidth, innerHeight, WEBGL);
   }
   
   function draw() {
     background(200);
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
-    model(octahedron);
+    normalMaterial(); 
+    //texture(img);
+    model(tree);
   }
