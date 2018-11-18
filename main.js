@@ -46,11 +46,9 @@ tabPanels.forEach(function(node){
 //code to store days data locally
 var Day = {
     didntLookAtScreen: false,
-    submittedScreen: false,
     drunk: false,
-    submittedDrunk: false,
     sleepTime: 0,
-    submittedSleepTime: false
+    submitted: false
 }
 
 var days = [];
@@ -70,6 +68,7 @@ localStorage.days = JSON.stringify(days);
 }
 
 function updatePoints() {
+    points = 0;
     for(let day of days) {
         points += day.didntLookAtScreen * 25;
         points += day.drunk * 25;
