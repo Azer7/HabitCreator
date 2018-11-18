@@ -59,9 +59,8 @@ function submitDaily() {
     days[currentDay].didntLookAtScreen = myCheck.is(":checked");
     days[currentDay].drunk = myCheck2.is(":checked");
     days[currentDay].sleepTime = myInput.val() ? myInput.val() : 0;
-    days[currentDay].submittedScreen = true;
-    days[currentDay].submittedDrunk = true;
-    days[currentDay].submittedSleepTime = true;
+    days[currentDay].submitted = true;
+
     
     localStorage.days = JSON.stringify(days);
     updatePoints();
