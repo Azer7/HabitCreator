@@ -57,6 +57,7 @@ function submitDaily() {
     days[currentDay].submittedSleep = true;
     days[currentDay].submittedDrunk = true;
     localStorage.days = JSON.stringify(days);
+    updatePoints();
     initDailyToDo();
 }
 
