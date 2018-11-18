@@ -29,10 +29,10 @@ input[type=number]{
     font-size:30px;
     border: 1px solid green;
     padding: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .button{
-    float: left;
+    /* float: left; */
     zoom: 2.0;
 }
