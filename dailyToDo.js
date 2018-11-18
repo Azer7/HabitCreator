@@ -1,29 +1,3 @@
-var Day = {
-        didntLookAtScreen: false,
-        submittedSleep: false,
-        drunk: false,
-        submittedDrunk: false
-}
-// var data;
-// $.get(data.json, function(e) {
-// data = e;
-// });
-var days = [];
-if(localStorage.days == undefined) {
-    resetData();
-} else {
-    days = JSON.parse(localStorage.days);
-}
-
-
-function resetData() {
-    localStorage.removeItem("days");
-    for(var i = 0; i < 31; i++) {
-        days.push(Object.assign({}, Day));
-    }
-    localStorage.days = JSON.stringify(days);
-}
-
 //resetData();
 
 function initDailyToDo(){
