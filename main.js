@@ -72,8 +72,8 @@ days = [];
 for(var i = 0; i < 31; i++) {
     days.push(Object.assign({}, Day));
     days[i].sleepTime = Math.floor(Math.random() * 8) + 3;
-    days[i].didntLookAtScreen = Math.random > 0.3 ? true : false;
-    days[i].drunk = Math.random > 0.2 ? true : false;
+    days[i].didntLookAtScreen = Math.random() > 0.3 ? true : false;
+    days[i].drunk = Math.random() > 0.2 ? true : false;
 }
 localStorage.days = JSON.stringify(days);
 }
