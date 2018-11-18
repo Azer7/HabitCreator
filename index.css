@@ -25,7 +25,7 @@
 }
 .tabContainer .buttonContainer button:hover{
     background-color: cadetblue;
-    font-size: 30px;
+    font-size: 24px;
 }
 .tabContainer .tabPanel{
     height: 85%;
