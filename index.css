@@ -36,3 +36,15 @@
     font-size: 22px;
     display: none;
 }
+
+#myProgress {
+    width: 90%;
+    background-color: grey;
+    
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+    
+}
