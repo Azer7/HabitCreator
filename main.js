@@ -1,5 +1,6 @@
 var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
 var tabPanels=document.querySelectorAll(".tabContainer .tabPanel");
+
 function showPanel(panelIndex, colorCode) {
     var fileToLoad = "";
     switch(panelIndex) {
