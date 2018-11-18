@@ -88,6 +88,7 @@ function updatePoints() {
     }
     $("#myBar").width(String(points) + "%");
     
+    
 }
 
 showPanel(0,'#ffffff');
