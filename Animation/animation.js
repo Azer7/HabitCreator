@@ -9,9 +9,11 @@ function preload() {
   
   function draw() {
     background(200);
-    rotateX(frameCount * 0.01);
+    //rotateX(frameCount * 0.01);
+    rotateX(3.14159)
     rotateY(frameCount * 0.01);
+    directionalLight(250, 250, 250, -.16, 1, 0.25);
     normalMaterial(); 
-    //texture(img);
+    texture(img);
     model(tree);
   }
