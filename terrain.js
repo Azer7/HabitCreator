@@ -88,7 +88,7 @@ function clouds(){
     pop();
   }
   pop();
-	var newcloud = int(random(200));
+	var newcloud = int(random(150));
 		if (newcloud == 5){
 		it++;
 		}
@@ -138,6 +138,7 @@ function draw() {
   background(178, 232, 255);
   noStroke();
   ambientLight(100);
+
 
   var dirY = (mouseY / height - 0.5) * 4;
 	var dirX = (mouseX / width - 0.5) * 4;
@@ -202,6 +203,13 @@ function draw() {
      clouds();
   }
   
+  pop();
+
+  ambientMaterial(255,255,0);
+  stroke(240,240,0);
+  push();
+  translate(-900,-300,-500);
+  ellipsoid(90,90,90,5,5);
   pop();
 
   //  flower(-800,420);

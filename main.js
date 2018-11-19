@@ -85,8 +85,8 @@ localStorage.days = JSON.stringify(days);
 function updatePoints() {
     points = 0;
     for(let day of days) {
-        points += day.didntLookAtScreen * 25;
-        points += day.drunk * 25;
+        points += day.didntLookAtScreen * 50;
+        points += day.drunk * 50;
         points += 30-constrain(Math.abs(9-day.sleepTime), 0, 6)*5;
         }
     
