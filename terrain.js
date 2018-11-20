@@ -10,6 +10,7 @@ var geocolours =[];
 var cloudY = [];
 var cloudX = []; 
 var cloudZ = [];
+var cloudnum = 6;
 var it = 0;
 
 //for trees
@@ -55,7 +56,7 @@ function setup() {
  }
 
  //for clouds
- for(var i = 0; i < 4; i++){
+ for(var i = 0; i < cloudnum; i++){
   cloudY.push(random(-400,0));
   cloudZ.push(random(50,100));
   cloudX.push(0);
@@ -67,7 +68,7 @@ function clouds(){
 	stroke(240);
 	specularMaterial(255);
 	push();
-	translate(-1,0);
+	translate(-300,0);
 	for(var t = 0; t <= it; t ++){
 		translate(cloudX[t],cloudY[t],cloudZ[t]);
 		cloudX[t]+=2;
@@ -88,11 +89,11 @@ function clouds(){
     pop();
   }
   pop();
-	var newcloud = int(random(150));
+	var newcloud = int(random(100));
 		if (newcloud == 5){
 		it++;
 		}
-	if(it > 4){
+	if(it > cloudnum){
 		it = 0;
 	}
 }
