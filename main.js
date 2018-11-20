@@ -95,7 +95,7 @@ function updatePoints() {
       
     $("#level").html("Level: " + level);  
     $("#myBar").width(String(points) + "%");
-    $("#myBar").html(String(points) + "%");
+    $("#myBar").html("&nbsp" + String(points) + "%");
 
 }
 

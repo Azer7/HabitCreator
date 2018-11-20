@@ -3,7 +3,7 @@
 }
 
 #PR-buttonLeft {
-    margin-left: 46.5%;
+    margin-left: Calc(49.5% - 50px);
 }
 
 .goalDescription {
@@ -13,6 +13,7 @@
 
 .navig {
     text-decoration: none;
+    margin-bottom: 10px;
     display: inline-block;
     padding: 16px 24px;
     background-color: #f1f1f1;
