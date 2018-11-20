@@ -76,9 +76,10 @@ function resetData(abool) {
             days[i].sleepTime = Math.floor(Math.random() * 7) + 4;
             days[i].didntLookAtScreen = Math.random() > 0.3 ? true : false;
             days[i].drunk = Math.random() > 0.2 ? true : false;
-            var currentDay = new Date().getDate();
+            
         }
     }
+    var currentDay = new Date().getDate();
     days[currentDay].sleepTime = 0;
     days[currentDay].didntLookAtScreen = false;
     days[currentDay].drunk = false;
