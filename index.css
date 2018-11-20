@@ -63,6 +63,7 @@
     line-height: 30px; /* To center it vertically */
     color: white; 
     max-width: 100%;
+    font-family:"Abel";
 }
 #level {
     color: green;
@@ -70,6 +71,7 @@
     padding-left: 5px;
     padding-bottom: 7px;
     font-size: 20px;
+    font-family: "Abel";
     
 }
 #intro{
