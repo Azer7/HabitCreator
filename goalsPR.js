@@ -72,7 +72,7 @@ function plotRadar() {
         screenOffCount = 0,
         drankTeaCount = 0;
     for (var day of days) {
-        if (day.sleepTime > 7 && day.sleepTime < 11) {
+        if (day.sleepTime > 6 && day.sleepTime < 12) {
             sleptCount++;
         }
         if (day.didntLookAtScreen) {
