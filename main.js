@@ -84,6 +84,7 @@ function resetData(abool) {
     days[currentDay].didntLookAtScreen = false;
     days[currentDay].drunk = false;
     localStorage.days = JSON.stringify(days);
+    location.reload(true);
 
 }
 
