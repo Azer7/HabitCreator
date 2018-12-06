@@ -68,7 +68,7 @@ function clouds(){
 	stroke(240);
 	specularMaterial(255);
 	push();
-	translate(-300,0);
+	translate(-600,0);
 	for(var t = 0; t <= it; t ++){
 		translate(cloudX[t],cloudY[t],cloudZ[t]);
 		cloudX[t]+=2;
@@ -87,16 +87,21 @@ function clouds(){
 		translate(34,49,31);
 		ellipsoid(60,60,60,4,4);
     pop();
-  }
+    if (cloudX[t] > w){
+      cloudX[t] = 0;
+    }
+    }
+  
   pop();
 	var newcloud = int(random(100));
 		if (newcloud == 5){
 		it++;
 		}
 	if(it > cloudnum){
-		it = 0;
-	}
+		it -= 1;
+  }
 }
+
 
 function bush(x,y,z){
   push();
