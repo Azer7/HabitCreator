@@ -106,7 +106,6 @@ function clouds(){
 function bush(x,y,z){
   push();
   translate(x,y,z)
-  // fill(0,100,0);
   ambientMaterial(255,105,180);
   noStroke();
   texture(img);
