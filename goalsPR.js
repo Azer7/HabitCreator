@@ -57,8 +57,8 @@ function plotSleep() {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        suggestedMin: 0,
-                        suggestedMax: 16
+                        min: 0,
+                        max:24
                     }
                 }]
             }
